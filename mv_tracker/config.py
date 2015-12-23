@@ -11,7 +11,7 @@ import numpy as np
 ctime = time()
 #################################
 
-######### paramètre de l'algo  meanshift ##########
+#########  meanshift parameter ######## ##########
 term_crit = ( cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 1 )
 ##################################################
 
