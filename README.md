@@ -1,4 +1,4 @@
-# Movement tracker using python with dbscan and meanshift algo
+# Motion tracker using python with dbscan and meanshift algo
 
 some old works about movement detection I did a while ago!:
 
@@ -24,7 +24,7 @@ pip install -U -r requirements.txt
 * meanshift trackers are then applied to each movement areas
 * processing of the different movement area are then effectued (deletion, erosion, fusion) according to different parameters
 
-# config
+## config
 All the parameters controling the algorithm are defined into the `config.py` file:
 
 
@@ -53,7 +53,7 @@ motion_detection_thres = 18000 # threshold for movement detection
 ```
 
 ## interest 
-the different parameters could (in theory!= allowing us to control perfectly the type of movement to track (small objects very noisy, big objects slowly moving...) 
+the different parameters could (in theory!) allowing us to control perfectly the type of movement to track (small objects very noisy, big objects slowly moving...) 
 
 ## test
 
@@ -67,7 +67,7 @@ python mv_tracker/script/main.py
 ![video face](./demo/demo_face.gif)
 ![video person](./demo/demo_person.gif)
 
-# To do! 
+## To do! 
 
 * add video reader (only from webcam currently!) [easy]
 * add supervized analysis to detect head, hand, person...etc... [long but largely doeable]
