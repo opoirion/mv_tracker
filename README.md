@@ -58,3 +58,8 @@ to launch the algo:
 ```bash
 python mv_tracker/script/main.py
 ```
+
+## demo
+
+[video 1](./demo/demo face.mkv)
+[video 2](./demo/demo person.mkv)
