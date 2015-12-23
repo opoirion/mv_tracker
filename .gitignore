@@ -1,0 +1,10 @@
+*.pyc
+*.txt
+*.nt
+*.csv
+*egg-info*
+build/*
+dist/*
+*.py~
+*#*
+.cache*
