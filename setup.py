@@ -18,7 +18,7 @@ setup(name='mv_tracker',
       zip_safe=False,
       install_requires=[
           'sklearn',
-          'cv2',
+          'cv2wrap',
           'numpy',
       ],
       )
