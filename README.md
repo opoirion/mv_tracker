@@ -7,14 +7,52 @@ The tracker is then used on the webcam.
 
 ## Installation
 
+Tested with python2. Requires the cv2 wrapper for python2 (I personnally installed cv2wrap)
+
 * dependencies
  * scikit-learn
  * numpy
- * opencv (for c++) and cv2 (opencv wrapper) for python
+ * scipy
+ * opencv (for c++) and python-opencv (opencv wrapper) for python
 * to install:
 ```bash
-pip install -U -r requirements.txt
+pip install -r requirements.txt --user
 ```
+
+However, sometime the installation through pip is buggy, depending of the distribution. Also, the cv2 package to install depends of the OS. (I'm not sure that cv2wrap will be ok in any situations). A solution is to install manually the different package using the package manager of the distribution (i.e. `apt-get install python-opencv`...etc... and in a second time to install the package without dependency.
+
+```bash
+pip install --no-deps --user
+```
+
+Once mv_tracker is installed, a webcam needs to be plugged. cv2 should also be able to read an image from the webcam
+
+* test the package
+
+```bash
+pip install nose --user
+nosetests -v
+```
+
+```python
+# test cv2 in python2
+import cv2
+
+cam  =  cv2.VideoCapture(0)
+
+
+winName = "Movement Indicator"
+cv2.namedWindow(winName, cv2.WINDOW_AUTOSIZE)
+
+img = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)
+print img
+
+while True:
+      img = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)
+      cv2.imshow(winName, img)
+
+```
+
 
 ## principle
 * movement is computed by images difference
@@ -52,8 +90,8 @@ motion_detection_thres = 18000 # threshold for movement detection
 #########################
 ```
 
-## interest 
-the different parameters could (in theory!) allowing us to control perfectly the type of movement to track (small objects very noisy, big objects slowly moving...) 
+## interest
+the different parameters could (in theory!) allowing us to control perfectly the type of movement to track (small objects very noisy, big objects slowly moving...)
 
 ## test
 
@@ -67,12 +105,11 @@ python mv_tracker/script/main.py
 ![video face](./demo/demo_face.gif)
 ![video person](./demo/demo_person.gif)
 
-## To do! 
+## To do!
 
 * add video reader (only from webcam currently!) [easy]
 * add supervized analysis to detect head, hand, person...etc... [long but largely doeable]
 * test other tracking algo (i.e. camshift) [don't know if it will work]
 * allow rectangle rotation (camshift can answer to that else use of SVG matrix decomposition) [long, could be hard]
-* add "anchor points" to keep tracking newly static objcts [hard] 
+* add "anchor points" to keep tracking newly static objcts [hard]
 * optimize speed and memory (python!! and quickly done), cython could be used for some parts. else recoding all the project in C++ instead (under the condition to find a fitable dbscan algo)
-

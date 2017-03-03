@@ -239,9 +239,9 @@ class CamLauncher(object):
 
         #############################################################
         winName = "Movement Indicator"
-        cv2.namedWindow(winName, cv2.CV_WINDOW_AUTOSIZE)
+        cv2.namedWindow(winName, cv2.WINDOW_AUTOSIZE)
         winName2 = "Movement Indicator 2"
-        cv2.namedWindow(winName2, cv2.CV_WINDOW_AUTOSIZE)
+        cv2.namedWindow(winName2, cv2.WINDOW_AUTOSIZE)
         self.img_minus = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)
         self.img = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)
         self.img_plus = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)

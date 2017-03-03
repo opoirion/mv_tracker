@@ -20,5 +20,6 @@ setup(name='mv_tracker',
           'sklearn',
           'cv2wrap',
           'numpy',
+          'scipy'
       ],
       )
