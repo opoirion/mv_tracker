@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-VERSION = '0.2.2'
+VERSION = '0.2.3'
 
 setup(name='mv_tracker',
       version=VERSION,
